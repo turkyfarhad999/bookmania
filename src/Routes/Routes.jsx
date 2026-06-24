@@ -7,6 +7,7 @@ import Listedbook from "../Listed/Listedbook";
 import Listtoread from "../Listed/Listtoread";
 import { Component } from "react";
 import Wish from "../Listed/Wish";
+import Chart from "../Chart";
 
 
 export const router=createBrowserRouter([
@@ -45,6 +46,9 @@ export const router=createBrowserRouter([
            }
         ]
         
+     },
+     {
+        path:"/pagetoread", element:<Chart/>
      }
      
   ],
