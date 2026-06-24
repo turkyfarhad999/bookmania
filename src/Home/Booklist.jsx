@@ -18,7 +18,7 @@ const Booklist = () => {
     return (
 <div className='container mx-auto '>
    <h2 className='text-4xl font-bold text-center my-3'>Book list</h2>
-    <div className=' grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 sm:flex justify-center gap-3 '>
+    <div className=' grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 sm:gap-5 items-center justify-center'>
     {book.map((bk,index)=><Bookcollectio bk={bk} key={index}></Bookcollectio>)}
  </div>
 </div>
