@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router'; // ১. Link ইম্পোর্ট করা হলো
+import { Link } from 'react-router'; 
 import { IoLocationOutline } from 'react-icons/io5';
 // {
 //     "bookId": 1,
@@ -19,7 +19,7 @@ const Wishdata = ({wishbook}) => {
     return (
         <div className="card lg:card-side bg-base-100 border border-gray-100 shadow-xs p-6 flex flex-col lg:flex-row gap-6 items-center rounded-3xl max-w-5xl mx-auto my-4 text-left">
             
-            {/* বামপাশের ইমেজ সেকশন */}
+            
             <div className="w-full lg:w-56 h-48 bg-gray-50 flex items-center justify-center rounded-2xl p-4 flex-shrink-0">
                 <img 
                     className="h-full object-contain rounded-md" 
@@ -28,15 +28,15 @@ const Wishdata = ({wishbook}) => {
                 />
             </div>
 
-            {/* ডানপাশের কনটেন্ট সেকশন */}
+           
             <div className="flex-grow w-full">
                
                 <h2 className="text-2xl font-bold font-serif text-gray-900 mb-1">{wishbook.bookName}</h2>
                 
-                {/* লেখকের নাম */}
+               
                 <p className="text-gray-600 font-medium text-sm mb-4">By : {wishbook.author}</p>
 
-                {/* ট্যাগ, পাবলিশিং ইয়ার লাইন */}
+               
                 <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm mb-4">
                     <div className="flex items-center gap-2">
                         <span className="font-bold text-gray-800">Tag</span>
@@ -56,7 +56,7 @@ const Wishdata = ({wishbook}) => {
                     </div>
                 </div>
 
-                {/* পাবলিশার এবং পেজ নাম্বার লাইন */}
+                
                 <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 font-medium pb-4 mb-4 border-b border-gray-100">
                     <div className="flex items-center gap-2">
                         <span className="text-lg">👥</span> {/* অথবা <FiUsers /> */}
@@ -68,19 +68,19 @@ const Wishdata = ({wishbook}) => {
                     </div>
                 </div>
 
-                {/* নিচের তিন কালারের বাটন বা ব্যাজ সেকশন */}
+                
                 <div className="flex flex-wrap items-center gap-3">
-                    {/* ক্যাটাগরি */}
+              
                     <span className="bg-blue-50 text-blue-500 font-medium px-5 py-2 rounded-full text-sm">
                         Category: {wishbook.category}
                     </span>
                     
-                    {/* রেটিং */}
+                
                     <span className="bg-orange-50 text-orange-500 font-medium px-5 py-2 rounded-full text-sm">
                         Rating: {wishbook.rating}
                     </span>
                     
-                    {/* ভিউ ডিটেইলস বাটন */}
+                   
                     <Link 
                         to={`/books/${wishbook.bookId}`} 
                         className="btn btn-success text-white font-semibold rounded-full min-h-0 h-10 px-6 hover:bg-green-600 border-none ml-auto lg:ml-0"
