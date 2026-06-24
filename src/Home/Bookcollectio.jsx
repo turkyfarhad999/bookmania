@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaRegStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const Bookcollectio = ({bk}) => {
     // "bookId": 1,
@@ -14,7 +15,7 @@ const Bookcollectio = ({bk}) => {
     // "publisher": "Scribner",
     // "yearOfPublishing": 1925
     return (
-       <div className="card bg-base-100 w-96 shadow-sm h-full flex flex-col justify-between">
+       <div  className="card bg-base-100 w-96 shadow-sm h-full flex flex-col justify-between"> <Link to={`/books/${bk.bookId}`}>
   <figure className='flex items-center justify-center max-w-[70%] mx-auto py-4 bg-gray-50 rounded-2xl mt-6 w-full h-[230px]'>
     <img className='h-full object-contain rounded-xl'
       src={bk.image}
@@ -32,6 +33,7 @@ const Bookcollectio = ({bk}) => {
       <div className="border-none flex justify-center items-center gap-1"><p>{bk.rating}</p> <FaRegStar /></div>
     </div>
   </div>
+  </Link>
 </div>
     );
 };
