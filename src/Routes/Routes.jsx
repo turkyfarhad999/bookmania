@@ -3,6 +3,11 @@ import Base from "../Base/Base";
 import Home from "../Home/Home";
 import Error from "../Error/Error";
 import Book from "../Home/Book";
+import Listedbook from "../Listed/Listedbook";
+import Listtoread from "../Listed/Listtoread";
+import { Component } from "react";
+import Wish from "../Listed/Wish";
+
 
 export const router=createBrowserRouter([
   {
@@ -27,7 +32,19 @@ export const router=createBrowserRouter([
          path:"/bo", element:"book"
      },
      {
-        path:"/books/:id", Component:Book
+        path:"/books/:id", element:<Book/>
+        
+     },
+     {
+        path:"/listedbooks", Component:Listedbook,
+        children:[
+           { index:true, element:<Listtoread/>
+           },
+           {
+            path:"wishlist", element:<Wish/>
+           }
+        ]
+        
      }
      
   ],

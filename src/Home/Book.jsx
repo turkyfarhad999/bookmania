@@ -1,19 +1,11 @@
-import React, { use } from 'react';
+import React, { use, useContext } from 'react';
 import { useParams } from 'react-router';
+import { DataContext } from '../Context';
 const singlebookdata=fetch('/booksData.json').then(res=>res.json())
-// "bookId": 1,
-//     "bookName": "The Great Gatsby",
-//     "author": "F. Scott Fitzgerald",
-//     "image": "https://i.ibb.co.com/khHN7Pk/9780143454212.jpg",
-//     "review": "'The Great Gatsby' by F. Scott Fitzgerald is a timeless masterpiece that delves into the decadence and disillusionment of the Jazz Age. Set in the Roaring Twenties, the novel unveils the enigmatic Jay Gatsby's extravagant parties, masking a pursuit of lost love. Narrated by Nick Carraway, the story explores themes of wealth, love, and the American Dream, drawing readers into a vivid portrayal of the glittering yet elusive world of the East and West Egg. Fitzgerald's prose is both poetic and haunting, weaving a compelling narrative that transcends its era. A poignant exploration of societal excess and the human condition, 'The Great Gatsby' remains a literary gem that resonates across generations.",
-//     "totalPages": 192,
-//     "rating": 4.5,
-//     "category": "Classic",
-//     "tags": ["Fiction", "Romance"],
-//     "publisher": "Scribner",
-//     "yearOfPublishing": 1925
+
 const Book = () => {
     const {id }=useParams();
+    const { handleReadbook, handlewishlisted } = useContext(DataContext);
     const singlebook=use(singlebookdata)
     console.log(singlebook)
     const onebook=singlebook.find(book=>book.bookId===Number(id))
@@ -39,8 +31,8 @@ const Book = () => {
       <pre  className='font-bold'>year Of Publishing:        {onebook.yearOfPublishing}</pre>
       <pre className='font-bold'>Rating:                                {onebook.rating}</pre>
       <div className='flex gap-2'>
-        <button className="btn btn-outline btn-primary">Read</button>
-        <button className="btn btn-info">Wishlist</button>
+        <button onClick={()=>handleReadbook(onebook)} className="btn btn-outline btn-primary">Add to Readlist</button>
+        <button onClick={()=>handlewishlisted(onebook)}className="btn btn-info">Add to Wishlist</button>
       </div>
     </div>
   </div>
